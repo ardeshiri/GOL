@@ -1,0 +1,208 @@
+# depslib dependency file v1.0
+1587815124 source:/home/snake/Cods/CodeBlocks/sfml_obs_mode/main.cpp
+	<iostream>
+	"sfml_win.h"
+	"shape_obj.h"
+	<cmath>
+	<random>
+	<map>
+
+1583330542 source:/home/snake/Cods/CodeBlocks/sfml_obs_mode/src/sfml_win.cpp
+	"sfml_win.h"
+	<algorithm>
+
+1582123859 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/sfml_win.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	<vector>
+	<functional>
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	"reactor.h"
+
+1579854043 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/obsrvr.h
+	<SFML/Window.hpp>
+	<vector>
+
+1580572908 source:/home/snake/Cods/CodeBlocks/sfml_obs_mode/src/mousemove.cpp
+	"mousemove.h"
+	<iostream>
+
+1580572885 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/mousemove.h
+	"obsrvr.h"
+	"drawable.h"
+	<memory>
+	<initializer_list>
+	<map>
+
+1581008602 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/drawable.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	"reactor.h"
+
+1582126125 source:/home/snake/Cods/CodeBlocks/sfml_obs_mode/src/shape_obj.cpp
+	"shape_obj.h"
+
+1582126125 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/shape_obj.h
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	<memory>
+	<iostream>
+
+1581000622 source:/home/snake/Cods/CodeBlocks/sfml_obs_mode/src/shape_group.cpp
+	"shape_group.h"
+	<iostream>
+
+1580672413 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/shape_group.h
+	"obsrvr.h"
+	"drawable.h"
+	"shape_obj.h"
+	<memory>
+	<initializer_list>
+	<map>
+
+1580753958 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/alive.h
+
+1580916838 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/collidable.h
+	<SFML/Graphics.hpp>
+
+1581001101 /home/snake/Cods/CodeBlocks/sfml_obs_mode/include/reactor.h
+	"drawable.h"
+
+1588109031 source:/home/snake/Cods/CodeBlocks/GameofLife/main.cpp
+	<iostream>
+	"sfml_win.h"
+	"shape_obj.h"
+	<cmath>
+	"World.h"
+	<random>
+	<map>
+
+1588080075 /home/snake/Cods/CodeBlocks/GameofLife/include/sfml_win.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	<vector>
+	<functional>
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	"reactor.h"
+
+1579854043 /home/snake/Cods/CodeBlocks/GameofLife/include/obsrvr.h
+	<SFML/Window.hpp>
+	<vector>
+
+1588063530 /home/snake/Cods/CodeBlocks/GameofLife/include/drawable.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	"reactor.h"
+
+1581001101 /home/snake/Cods/CodeBlocks/GameofLife/include/reactor.h
+	"drawable.h"
+
+1588061609 /home/snake/Cods/CodeBlocks/GameofLife/include/alive.h
+
+1588109838 /home/snake/Cods/CodeBlocks/GameofLife/include/shape_obj.h
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	<memory>
+	<iostream>
+
+1588083875 source:/home/snake/Cods/CodeBlocks/GameofLife/src/sfml_win.cpp
+	"sfml_win.h"
+	<algorithm>
+
+1588107366 source:/home/snake/Cods/CodeBlocks/GameofLife/src/shape_obj.cpp
+	"shape_obj.h"
+
+1588139776 source:/home/snake/Cods/CodeBlocks/GameofLife/src/World.cpp
+	"World.h"
+	<SFML/Graphics.hpp>
+	<utility>
+	<random>
+	<iostream>
+
+1588108987 /home/snake/Cods/CodeBlocks/GameofLife/include/World.h
+	<vector>
+	"shape_obj.h"
+	"drawable.h"
+	"alive.h"
+	<cmath>
+	<random>
+
+1588109031 source:/home/snake/Documents/GOL/main.cpp
+	<iostream>
+	"sfml_win.h"
+	"shape_obj.h"
+	<cmath>
+	"World.h"
+	<random>
+	<map>
+
+1588080075 /home/snake/Documents/GOL/include/sfml_win.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	<vector>
+	<functional>
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	"reactor.h"
+
+1579854043 /home/snake/Documents/GOL/include/obsrvr.h
+	<SFML/Window.hpp>
+	<vector>
+
+1588063530 /home/snake/Documents/GOL/include/drawable.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Audio.hpp>
+	"reactor.h"
+
+1581001101 /home/snake/Documents/GOL/include/reactor.h
+	"drawable.h"
+
+1588061609 /home/snake/Documents/GOL/include/alive.h
+
+1588109838 /home/snake/Documents/GOL/include/shape_obj.h
+	"obsrvr.h"
+	"drawable.h"
+	"alive.h"
+	<memory>
+	<iostream>
+
+1588108987 /home/snake/Documents/GOL/include/World.h
+	<vector>
+	"shape_obj.h"
+	"drawable.h"
+	"alive.h"
+	<cmath>
+	<random>
+
+1588083875 source:/home/snake/Documents/GOL/src/sfml_win.cpp
+	"sfml_win.h"
+	<algorithm>
+
+1588107366 source:/home/snake/Documents/GOL/src/shape_obj.cpp
+	"shape_obj.h"
+
