@@ -10,7 +10,7 @@
 class World: public drawable,public alive
 {
     public:
-        World(int b = 10, int xw= 300, int xh= 200);
+        World(int b = 1000, int xw= 200, int xh= 100);
         ~World();
 
         void init(const sf::RenderTarget& , const reactor* ) override;
@@ -41,6 +41,7 @@ class World: public drawable,public alive
     int w;
     std::vector<shape_obj> shv;
     sf::Time utime;
+    sf::Time auxtime;
     const sf::Time bit;
     std::random_device rd;
     std::mt19937 rg;

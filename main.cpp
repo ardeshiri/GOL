@@ -11,7 +11,7 @@ int main()
 {
 
     World wd{};
-    sfml_win sw{1000,650,"Game of life"};
+    sfml_win sw{1000,600,"Game of life"};
 
     sw.register_drawable(wd);
     sw.register_alive(wd);

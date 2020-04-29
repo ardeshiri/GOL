@@ -6,10 +6,10 @@
 #include <cmath>
 
 
-World::World(int b ,int xw, int xh):h{xh},w{xw},shv{},utime{},bit{sf::milliseconds(b)},rd{},rg{rd()},uid1{(w*h)/7, w*h-1},uid2{0, w*h-1}
+World::World(int b ,int xw, int xh):h{xh},w{xw},shv{},utime{},auxtime{},bit{sf::milliseconds(b)},rd{},rg{rd()},uid1{(w*h)/10, (w*h)/7},uid2{0, w*h-1}
 {
     for(int i = 0 ; i < (h*w); ++i)
-        shv.push_back(std::move(shape_obj (new sf::RectangleShape (sf::Vector2f(2.f, 2.f)))));
+        shv.push_back(std::move(shape_obj (new sf::RectangleShape (sf::Vector2f(4.f, 4.f)))));
 }
 
 World::~World()
@@ -22,7 +22,7 @@ void World::init(const sf::RenderTarget& , const reactor* )
         int i = 0;
         for(auto& o : shv)
             {
-                o.shape_pointer()->setPosition(3*(i%w) , 3*floor(i/w));
+                o.shape_pointer()->setPosition(5*(i%w) , 5*floor(i/w));
                 ++i;
             }
     }
@@ -45,7 +45,7 @@ void World::time_update(const sf::Time& t)
 void World::update_cells()
 {
     int cn = 0;
-/*    if(starter++ < 7)
+    if(starter < 7)
     {
         cn = int(uid1(rg) / (starter+1));
         std::vector<int> rv(cn);
@@ -58,49 +58,52 @@ void World::update_cells()
             shv[o].is_cell_alive(true);
         }
         std::cout<<"generating "<<starter<<std::endl;
+        starter++;
+    }
+
+
+/*
+    if(starter < 1)
+    {
+        cn = 0;
+        for(auto& o : shv)
+        {
+            if (++cn%3 == 0)
+            o.is_cell_alive_pre(true);
+
+        }
+        std::cout<<"generating "<<starter<<std::endl;
+        starter++;
     }
 */
- /*
-    if(starter++ < 1)
-    cn = 0;
-    for(auto& o : shv)
-    {
-        if (++cn%2 == 0)
-        o.is_cell_alive_pre(true);
-    }
- */
-    if(starter++ < 1)
-    cn = 0;
-    for(auto& o : shv)
-    {
-
-    }
-
-
 
     /// rules :
-    cn = 0;
-    for(auto& o : shv)
+    if(utime - auxtime > bit )
     {
-        if(o.is_cell_alive())
+        auxtime = utime;
+        cn = 0;
+        for(auto& o : shv)
         {
-            if(count_neighbours(cn) < 2 ||  count_neighbours(cn) > 3)
+            if(o.is_cell_alive())
             {
-                o.is_cell_alive_pre(false);
+                if(count_neighbours(cn) < 2 ||  count_neighbours(cn) > 3)
+                {
+                    o.is_cell_alive_pre(false);
+                }
             }
+            if(!(o.is_cell_alive()))
+            {
+                if(count_neighbours(cn) == 3)
+                {
+                    o.is_cell_alive_pre(true);
+                }
+            }
+            ++cn;
         }
-        if(!(o.is_cell_alive()))
+        for(auto& o : shv)
         {
-            if(count_neighbours(cn) == 3)
-            {
-                o.is_cell_alive_pre(true);
-            }
+            o.trig();
         }
-        ++cn;
-    }
-    for(auto& o : shv)
-    {
-        o.trig();
     }
 }
 
