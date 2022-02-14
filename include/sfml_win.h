@@ -29,6 +29,7 @@ class sfml_win:public observer,public reactor
         void update_all(const sf::Time& t);
         void check_all();
         void collision_check(drawable& d) const override;
+        void mouse_pos( World& w) const override;
         void swap_drawables(size_t i, size_t j);
         void clock_reset();
         void close();

@@ -6,7 +6,7 @@
                                         collidable{false},hide{false},is_cell_alive_v{false},is_cell_alive_t{false}
     {
         add_tr_func(border_update);
-        shape_obj_ptr.get()->setFillColor(sf::Color::White);
+        shape_obj_ptr.get()->setFillColor(sf::Color::Blue);
     }
 
 

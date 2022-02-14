@@ -1,5 +1,8 @@
 #include "sfml_win.h"
 #include <algorithm>
+#include <thread>
+#include <chrono>
+#include "World.h"
 
 sfml_win::sfml_win(int w, int h, std::string win_name, sf::Color clr,uint32_t atr, int cntx_setting):win{sf::VideoMode(w,h), win_name, atr, sf::ContextSettings(cntx_setting)},
                                                                                                      observers_list{},drawables_list{},alive_list{}, event_handler_vec{},
@@ -9,8 +12,7 @@ sfml_win::sfml_win(int w, int h, std::string win_name, sf::Color clr,uint32_t at
 
     add_event_handler(win_close_event_handler);
     add_event_handler(win_resize_event_handler);
-
-    glEnable(GL_TEXTURE_2D);
+  //  glEnable(GL_TEXTURE_2D);
     sf::ContextSettings settings;
     win.setVerticalSyncEnabled(true);
     win.setActive(true);
@@ -29,7 +31,7 @@ void sfml_win::init_all()
 void sfml_win::clear_all(sf::RenderTarget& rt)
 {
     rt.clear(win_back_color);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  //  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void sfml_win::display_all()
@@ -59,20 +61,25 @@ void sfml_win::check_all()
 
 void sfml_win::run_main_loop()
 {
+    using namespace std::chrono;
     while( win.isOpen())
     {
+        auto t1 = steady_clock::now();
         sf::Event event;
         update_all(clk.getElapsedTime());
 
         while(win.pollEvent(event))
         {
-          //  notify_all(event);
+            notify_all(event);
         }
-
         //check_all();
         clear_all(win);
         draw_all(win);
         display_all();
+
+        auto t2 = steady_clock::now();
+        auto thms = 60ms;
+        std::this_thread::sleep_for( thms-duration_cast<microseconds>(t2-t1) );
     }
 }
 
@@ -147,7 +154,7 @@ void sfml_win::win_resize_event_handler(const sf::Event& ev,sfml_win& )
 {
     if (ev.type == sf::Event::Resized)
     {
-        glViewport(0, 0, ev.size.width, ev.size.height);
+    //    glViewport(0, 0, ev.size.width, ev.size.height);
     }
 }
 
@@ -166,5 +173,10 @@ void sfml_win::collision_check(drawable& d) const
     }
 }
 
-
+void sfml_win::mouse_pos(World& w) const
+{
+    sf::Vector2i position = sf::Mouse::getPosition(win);
+    if(position.x < win.getSize().x && position.y < win.getSize().y)
+        w.mouse_update(position.x, position.y);
+}
 

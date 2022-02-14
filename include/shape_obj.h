@@ -4,9 +4,8 @@
 #include "drawable.h"
 #include "alive.h"
 #include <memory>
-
-
 #include <iostream>
+#include <functional>
 class shape_obj:public observer,public drawable,public alive
 {
     public:
@@ -41,7 +40,7 @@ class shape_obj:public observer,public drawable,public alive
     {
         is_cell_alive_v = b;
         is_cell_alive_t = b;
-        shape_obj_ptr.get()->setFillColor( (is_cell_alive_v)? sf::Color::Black:sf::Color::White);
+        shape_obj_ptr.get()->setFillColor( (is_cell_alive_v)? sf::Color::Magenta:sf::Color::Blue);
         if(b == true)
             birth_time = utime;
     }
