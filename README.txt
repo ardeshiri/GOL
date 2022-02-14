@@ -14,6 +14,7 @@ make release
 
 controls (move the mouse on the screen and use keyboard to draw):
 'C': is used to clear the screen.
+'P': pause the time.
 'E': is used to erase a point.
 'L': draws a blinker.
 'B': draws a block.
@@ -24,3 +25,6 @@ controls (move the mouse on the screen and use keyboard to draw):
 'D': draws a dot. As you can see in the rules of the game a single dot can not survive and dies immediately after a tick, so you have to use 'p' to pause, use dot to draw, and again 'p' to play.
 'O': draws a boat.
 'U': draws a tub or flower.
+
+more details:
+https://www.linkedin.com/pulse/game-based-conways-life-using-c-sfml-lots-design-arash-ardeshiri/?trackingId=H8%2FKWXQkT9iPMkF%2FzQfu%2Bw%3D%3D
